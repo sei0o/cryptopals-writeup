@@ -1,4 +1,4 @@
-# An ECB/CBC detection oracle
+# Byte-at-a-time ECB decryption (Simple)
 require 'openssl'
 require 'base64'
 
