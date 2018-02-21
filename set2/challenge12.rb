@@ -19,11 +19,7 @@ class Oracle
   def random_bytes length = 16
     length.times.map { (0x00..0xFF).to_a.sample.chr }.join
   end
-
-  def xor_str a, b
-    a.bytes.zip(b.bytes).map { |cha, chb| (cha.ord ^ chb.ord).chr }.join
-  end
-
+  
   def padding_pkcs7 str, len # From Challenge 9
     add = len - str.size % len
     add == len ? str : str + add.chr * add
